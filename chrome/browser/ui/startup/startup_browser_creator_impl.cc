@@ -657,6 +657,12 @@ bool StartupBrowserCreatorImpl::ProcessStartupURLs(
 
   AddInfoBarsIfNecessary(browser, chrome::startup::IS_PROCESS_STARTUP);
 
+  // open browser by default
+  // 2015-05-06 add by leo
+  #include "chrome/app/chrome_command_ids.h"
+  chrome::ExecuteCommand(browser, IDC_DEV_TOOLS);
+  // 2015-05-06 add by leo
+
   // Session restore may occur if the startup preference is "last" or if the
   // crash infobar is displayed. Otherwise, it's safe for the DOM storage system
   // to start deleting leftover data.
