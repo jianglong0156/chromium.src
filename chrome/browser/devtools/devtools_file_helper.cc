@@ -212,6 +212,17 @@ DevToolsFileHelper::DevToolsFileHelper(WebContents* web_contents,
     : web_contents_(web_contents),
       profile_(profile),
       weak_factory_(this) {
+
+	// 2015-05-07 add by leo
+	std::string userFilePathStr = "I:\\testbug\\html4";
+	DictionaryPrefUpdate update(profile_->GetPrefs(),
+		prefs::kDevToolsFileSystemPaths);
+	base::DictionaryValue* file_systems_paths_value = update.Get();
+	file_systems_paths_value->Clear();
+	file_systems_paths_value->SetWithoutPathExpansion(
+		userFilePathStr, base::Value::CreateNullValue());
+	// 2015-05-07 add by leo
+
 }
 
 DevToolsFileHelper::~DevToolsFileHelper() {
