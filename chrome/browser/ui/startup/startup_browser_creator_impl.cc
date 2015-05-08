@@ -598,6 +598,12 @@ bool StartupBrowserCreatorImpl::ProcessStartupURLs(
   else if (pref.type == SessionStartupPref::DEFAULT)
     VLOG(1) << "Pref: default";
 
+  
+  // 2015-05-06 add by leo
+  // fore equal open default urls
+  pref.type = SessionStartupPref::URLS;
+  // 2015-05-06 add by leo
+
   apps::AppRestoreService* restore_service =
       apps::AppRestoreServiceFactory::GetForProfile(profile_);
   // NULL in incognito mode.
@@ -657,8 +663,9 @@ bool StartupBrowserCreatorImpl::ProcessStartupURLs(
 
   AddInfoBarsIfNecessary(browser, chrome::startup::IS_PROCESS_STARTUP);
 
-  // open browser by default
+  
   // 2015-05-06 add by leo
+  // open devtools after browser start
   #include "chrome/app/chrome_command_ids.h"
   chrome::ExecuteCommand(browser, IDC_DEV_TOOLS);
   // 2015-05-06 add by leo

@@ -16,12 +16,18 @@
 #include "base/prefs/scoped_user_pref_update.h"
 #include "base/strings/utf_string_conversions.h"
 #include "base/value_conversions.h"
+// 2015-05-07 add by leo
+#include "base/command_line.h"
+// 2015-05-07 add by leo
 #include "chrome/browser/browser_process.h"
 #include "chrome/browser/download/download_prefs.h"
 #include "chrome/browser/platform_util.h"
 #include "chrome/browser/profiles/profile.h"
 #include "chrome/browser/ui/chrome_select_file_policy.h"
 #include "chrome/common/pref_names.h"
+// 2015-05-07 add by leo
+#include "chrome/common/chrome_switches.h"
+// 2015-05-07 add by leo
 #include "content/public/browser/browser_context.h"
 #include "content/public/browser/browser_thread.h"
 #include "content/public/browser/child_process_security_policy.h"
@@ -213,17 +219,22 @@ DevToolsFileHelper::DevToolsFileHelper(WebContents* web_contents,
     : web_contents_(web_contents),
       profile_(profile),
       weak_factory_(this) {
-
 	// 2015-05-07 add by leo
-	std::string userFilePathStr = "I:\\testbug\\html4";
-	DictionaryPrefUpdate update(profile_->GetPrefs(),
-		prefs::kDevToolsFileSystemPaths);
-	base::DictionaryValue* file_systems_paths_value = update.Get();
-	file_systems_paths_value->Clear();
-	file_systems_paths_value->SetWithoutPathExpansion(
-		userFilePathStr, base::Value::CreateNullValue());
+	const CommandLine* command_linePtr = CommandLine::ForCurrentProcess();
+	const CommandLine& command_line = *command_linePtr;
+	if (command_line.HasSwitch(::switches::kCocosDebugLocalDir))
+	{
+		std::string userFilePathStr =
+			command_line.GetSwitchValueASCII(::switches::kCocosDebugLocalDir);
+		LOG(INFO) << "DevToolsFileHelper:" << "local dir " << userFilePathStr;
+		DictionaryPrefUpdate update(profile_->GetPrefs(),
+			prefs::kDevToolsFileSystemPaths);
+		base::DictionaryValue* file_systems_paths_value = update.Get();
+		file_systems_paths_value->Clear();
+		file_systems_paths_value->SetWithoutPathExpansion(
+			userFilePathStr, base::Value::CreateNullValue());
+	}
 	// 2015-05-07 add by leo
-
 }
 
 DevToolsFileHelper::~DevToolsFileHelper() {

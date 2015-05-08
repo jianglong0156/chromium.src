@@ -1242,6 +1242,25 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl() {
   if (!profile_)
     return content::RESULT_CODE_NORMAL_EXIT;
 
+// 20150428 add by leo
+// add start page
+
+   const CommandLine& command_line = parsed_command_line();
+   if (command_line.HasSwitch(::switches::kCocosDebugGameUrl))
+   {
+	   std::string gameUrl =
+		   command_line.GetSwitchValueASCII(::switches::kCocosDebugGameUrl);
+	   PrefService* prefs = profile_->GetPrefs();
+	   prefs->SetInteger(prefs::kRestoreOnStartup, 4);
+	   base::ListValue* url_pref_list = new base::ListValue;
+	   base::StringValue *urlStr = new base::StringValue(gameUrl);
+	   url_pref_list->Set(0, urlStr);
+	   prefs->SetDefaultPrefValue(prefs::kURLsToRestoreOnStartup, url_pref_list);
+	   LOG(INFO) << "chrome_browser_main.cc(1254):" << "open url " << gameUrl;
+   }
+ 
+// 20150428 add by leo
+  
 #if !defined(OS_ANDROID)
   // The first run sentinel must be created after the process singleton was
   // grabbed and no early return paths were otherwise hit above.
