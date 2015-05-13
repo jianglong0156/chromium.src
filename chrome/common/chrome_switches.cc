@@ -162,6 +162,14 @@ const char kCloudPrintPrintTicket[]         = "cloud-print-print-ticket";
 // Used with kCloudPrintFile to specify a title for the resulting print job.
 const char kCloudPrintJobTitle[]            = "cloud-print-job-title";
 
+// 2015-05-07 add by leo
+// cocos debug local dir
+const char kCocosDebugLocalDir[] = "cocos-debug-dir";
+
+// cocos game url
+const char kCocosDebugGameUrl[] = "cocos-game-url";
+// 2015-05-07 add by leo
+
 // Setup cloud print proxy for provided printers. This does not start
 // service or register proxy for autostart.
 const char kCloudPrintSetupProxy[]          = "cloud-print-setup-proxy";

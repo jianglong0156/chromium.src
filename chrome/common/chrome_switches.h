@@ -54,6 +54,10 @@ extern const char kCheckCloudPrintConnectorPolicy[];
 extern const char kCipherSuiteBlacklist[];
 extern const char kCloudPrintFile[];
 extern const char kCloudPrintJobTitle[];
+// 2015-05-07 add by leo
+extern const char kCocosDebugLocalDir[];
+extern const char kCocosDebugGameUrl[];
+// 2015-05-07 add by leo
 extern const char kCloudPrintFileType[];
 extern const char kCloudPrintPrintTicket[];
 extern const char kCloudPrintSetupProxy[];
