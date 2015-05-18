@@ -219,8 +219,8 @@ DevToolsFileHelper::DevToolsFileHelper(WebContents* web_contents,
       profile_(profile),
       weak_factory_(this) {
 	// 2015-05-07 add by leo
-	const CommandLine* command_linePtr = CommandLine::ForCurrentProcess();
-	const CommandLine& command_line = *command_linePtr;
+	const base::CommandLine* command_linePtr = base::CommandLine::ForCurrentProcess();
+	const base::CommandLine& command_line = *command_linePtr;
 	if (command_line.HasSwitch(::switches::kCocosDebugLocalDir))
 	{
 		std::string userFilePathStr =

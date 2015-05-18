@@ -1294,7 +1294,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl() {
 // 20150428 add by leo
 // add start page
 
-   const CommandLine& command_line = parsed_command_line();
+   const base::CommandLine& command_line = parsed_command_line();
    if (command_line.HasSwitch(::switches::kCocosDebugGameUrl))
    {
 	   std::string gameUrl =
