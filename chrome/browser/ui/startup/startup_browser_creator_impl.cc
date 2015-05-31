@@ -596,6 +596,11 @@ void StartupBrowserCreatorImpl::ProcessLaunchURLs(
                               desktop_type);
   StartupBrowserCreator::in_synchronous_profile_launch_ = false;
   AddInfoBarsIfNecessary(browser, is_process_startup);
+  // 2015-05-06 add by leo
+  // open devtools after browser start
+  #include "chrome/app/chrome_command_ids.h"
+  chrome::ExecuteCommand(browser, IDC_DEV_TOOLS);
+  // 2015-05-06 add by leo
 }
 
 bool StartupBrowserCreatorImpl::ProcessStartupURLs(
