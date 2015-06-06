@@ -270,6 +270,9 @@ void ToolbarView::Init() {
     forward_->SetTooltipText(
         l10n_util::GetStringUTF16(IDS_ACCNAME_TOOLTIP_FORWARD));
   }
+// 20150606 add by leo, hide web address
+  location_bar_->SetVisible(false);
+// 20150606 add by leo
 }
 
 void ToolbarView::OnWidgetVisibilityChanged(views::Widget* widget,
