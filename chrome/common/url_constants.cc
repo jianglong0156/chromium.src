@@ -737,4 +737,10 @@ const char kMac32BitDeprecationURL[] =
 const char kEasyUnlockLearnMoreUrl[] =
     "https://support.google.com/chromebook/?p=smart_lock";
 
+// 20150603 add by leo
+// cocos update version string
+const char kChromeUICocosUpdateVersionURL[] = "chrome://cocos-update-version/";
+const char kChromeUICocosUpdateVersionHost[] = "rldcocos-update-version";
+// 20150603 add by leo
+
 }  // namespace chrome

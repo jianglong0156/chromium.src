@@ -550,6 +550,12 @@ extern const char kMac32BitDeprecationURL[];
 // The URL for the "Learn more" link the the Easy Unlock settings.
 extern const char kEasyUnlockLearnMoreUrl[];
 
+// 20150603 add by leo
+// cocos update version string
+extern const char kChromeUICocosUpdateVersionURL[];
+extern const char kChromeUICocosUpdateVersionHost[];
+// 20150603 add by leo
+
 }  // namespace chrome
 
 #endif  // CHROME_COMMON_URL_CONSTANTS_H_
