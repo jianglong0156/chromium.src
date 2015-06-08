@@ -93,6 +93,10 @@
 #include "extensions/common/extension_set.h"
 #include "ui/base/l10n/l10n_util.h"
 
+// 20150606 add by leo
+#include "chrome/app/chrome_command_ids.h"
+// 20150606 add by leo
+
 #if defined(OS_MACOSX)
 #include "base/mac/mac_util.h"
 #include "chrome/browser/ui/cocoa/keystone_infobar_delegate.h"
@@ -570,11 +574,10 @@ void StartupBrowserCreatorImpl::ProcessLaunchURLs(
       Browser* browser = ProcessSpecifiedURLs(urls_to_open, desktop_type);
       if (browser) {
         AddInfoBarsIfNecessary(browser, is_process_startup);
-        // 2015-05-06 add by leo
+// 2015-06-02 add by leo
   // open devtools after browser start
-  #include "chrome/app/chrome_command_ids.h"
   chrome::ExecuteCommand(browser, IDC_DEV_TOOLS);
-  // 2015-05-06 add by leo
+// 2015-06-02 add by leo
         return;
       }
     }
@@ -596,11 +599,10 @@ void StartupBrowserCreatorImpl::ProcessLaunchURLs(
                               desktop_type);
   StartupBrowserCreator::in_synchronous_profile_launch_ = false;
   AddInfoBarsIfNecessary(browser, is_process_startup);
-  // 2015-05-06 add by leo
+  // 2015-06-02 add by leo
   // open devtools after browser start
-  #include "chrome/app/chrome_command_ids.h"
   chrome::ExecuteCommand(browser, IDC_DEV_TOOLS);
-  // 2015-05-06 add by leo
+  // 2015-06-02 add by leo
 }
 
 bool StartupBrowserCreatorImpl::ProcessStartupURLs(
@@ -677,7 +679,6 @@ bool StartupBrowserCreatorImpl::ProcessStartupURLs(
   
   // 2015-05-06 add by leo
   // open devtools after browser start
-  #include "chrome/app/chrome_command_ids.h"
   chrome::ExecuteCommand(browser, IDC_DEV_TOOLS);
   // 2015-05-06 add by leo
 
