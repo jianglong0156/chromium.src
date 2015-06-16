@@ -14,5 +14,12 @@
   <h1 i18n-content="helloWorldTitle"></h1>
   <p id="welcome-message"></p>
 <script src="chrome://resources/js/i18n_template2.js"></script>
+<dialog id="dialog">
+  <form method="dialog">
+    <p>Do you agree with terms of use?</p>
+    <button type="submit" value="yes">Yes</button>
+    <button type="submit" value="no" autofocus>No</button>
+  </form>
+</dialog>
 </body>
 </html>
