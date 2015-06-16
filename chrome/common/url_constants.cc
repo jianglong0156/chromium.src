@@ -739,8 +739,8 @@ const char kEasyUnlockLearnMoreUrl[] =
 
 // 20150603 add by leo
 // cocos update version string
-const char kChromeUICocosUpdateVersionURL[] = "chrome://cocos-update-version/";
-const char kChromeUICocosUpdateVersionHost[] = "rldcocos-update-version";
+const char kChromeUICocosUpdateVersionURL[] = "chrome://hello-world/";
+const char kChromeUICocosUpdateVersionHost[] = "hello-world";
 // 20150603 add by leo
 
 }  // namespace chrome

@@ -300,8 +300,6 @@
         'webui/jstemplate_builder.h',
         'webui/web_ui_util.cc',
         'webui/web_ui_util.h',
-		'webui/cocos/update_version_ui.cc',
-		'webui/cocos/update_version_ui.h',
         'win/accessibility_ids_win.h',
         'win/accessibility_misc_utils.cc',
         'win/accessibility_misc_utils.h',
