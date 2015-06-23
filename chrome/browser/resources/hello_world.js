@@ -1,32 +1,34 @@
 cr.define('hello_world', function() {
   'use strict';
  
-  /**
-   * Be polite and insert translated hello world strings for the user on loading.
-   */
-  function initialize() {
-      //chrome.send('addNumbers', [2, 2]);
-      showDialog();
+    /**
+     * Be polite and insert translated hello world strings for the user on loading.
+     */
+    function initialize() {
+      chrome.send('showUpdateDialog');
     }
  
-    function addResult(result) {
-      alert('The result of our C++ arithmetic: 2 + 2 = ' + result);
-    }
+    function showUpdateDialog(title, content, yesStr, noStr) {
+       var dialog = document.getElementById('dialog');
+       var dialogTitle = document.getElementById('dialogTitle');
+       var dialogYes = document.getElementById('dialogYes');
+       var dialogNo = document.getElementById('dialogNo');
 
-    function showDialog() {
-      var dialog = document.getElementById('dialog');
+       dialogTitle
+
        dialog.showModal();
        dialog.addEventListener('close', function (event) {
          if (dialog.returnValue == 'yes') {
-           alert("升级CDT");
+            windows.open("localhost:3000/Release20150520.zip"):
+           //alert("升级CDT");
          } else {
            alert("不升级CDT");
          }
        });
     }
- 
+
     return {
-      addResult: addResult,
+      showUpdateDialog: showUpdateDialog,
       initialize: initialize,
     };
 

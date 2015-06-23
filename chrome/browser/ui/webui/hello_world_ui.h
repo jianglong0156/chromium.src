@@ -15,8 +15,8 @@ public:
   explicit HelloWorldUI(content::WebUI* web_ui);
   virtual ~HelloWorldUI();
 private:
-  //Add two numbers together using integer arithmetic.
-  void AddNumbers(const base::ListValue* args);
+  // show update dialog when find new version
+	void showUpdateDialog(const base::ListValue* args);
  
   DISALLOW_COPY_AND_ASSIGN(HelloWorldUI);
 };

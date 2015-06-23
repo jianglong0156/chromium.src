@@ -7,7 +7,8 @@
 #include "content/public/browser/web_ui.h"
 #include "grit/browser_resources.h"
 #include "grit/generated_resources.h"
- 
+#include "ui/base/l10n/l10n_util.h"
+
 HelloWorldUI::HelloWorldUI(content::WebUI* web_ui)
     : content::WebUIController(web_ui) {
   // Set up the chrome://hello-world source.
@@ -15,8 +16,8 @@ HelloWorldUI::HelloWorldUI(content::WebUI* web_ui)
 	  content::WebUIDataSource::Create(chrome::kChromeUICocosUpdateVersionHost);
  
   // Register callback handler.
-  this->web_ui()->RegisterMessageCallback("addNumbers",
-  base::Bind(&HelloWorldUI::AddNumbers,
+  this->web_ui()->RegisterMessageCallback("showUpdateDialog",
+	  base::Bind(&HelloWorldUI::showUpdateDialog,
   base::Unretained(this)));
  
   //html_source->SetUseJsonJSFormatV2();
@@ -41,10 +42,18 @@ HelloWorldUI::HelloWorldUI(content::WebUI* web_ui)
 HelloWorldUI::~HelloWorldUI() {
 }
  
-void HelloWorldUI::AddNumbers(const base::ListValue* args) {
-  int term1, term2;
-  if (!args->GetInteger(0, &term1) || !args->GetInteger(1, &term2))
-    return;
-  base::FundamentalValue result(term1 + term2);
-  web_ui()->CallJavascriptFunction("hello_world.addResult", result);
+void HelloWorldUI::showUpdateDialog(const base::ListValue* args) {
+//   int term1, term2;
+//   if (!args->GetInteger(0, &term1) || !args->GetInteger(1, &term2))
+//     return;
+//   base::FundamentalValue result(term1 + term2);
+//   web_ui()->CallJavascriptFunction("hello_world.addResult", result);
+
+	base::StringValue titleStr(l10n_util::GetStringUTF16(IDS_COCOS_UPDATE_VERSION_TITLE));
+	base::StringValue contentStr(l10n_util::GetStringUTF16(IDS_COCOS_UPDATE_VERSION_TEXT));
+	base::StringValue yesStr(l10n_util::GetStringUTF16(IDS_CONFIRM_MESSAGEBOX_YES_BUTTON_LABEL));
+	base::StringValue noStr(l10n_util::GetStringUTF16(IDS_CONFIRM_MESSAGEBOX_NO_BUTTON_LABEL));
+	//base::FundamentalValue result(term1 + term2);
+
+	web_ui()->CallJavascriptFunction("hello_world.addResult", titleStr, contentStr, yesStr, noStr);
 }
