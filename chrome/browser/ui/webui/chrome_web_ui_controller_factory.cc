@@ -73,6 +73,10 @@
 #include "ui/gfx/favicon_size.h"
 #include "ui/web_dialogs/web_dialog_ui.h"
 #include "url/gurl.h"
+// 20150603 add by leo
+#include "chrome/browser/ui/webui/cocos/update_version_ui.h"
+#include "chrome/browser/ui/webui/hello_world_ui.h"
+// 20150603 add by leo
 
 #if !defined(DISABLE_NACL)
 #include "chrome/browser/ui/webui/nacl_ui.h"
@@ -340,6 +344,14 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
   if (url.host() == chrome::kChromeUIVersionHost)
     return &NewWebUI<VersionUI>;
 
+// 20150603 add by leo
+//   if (url.host() == chrome::kChromeUICocosUpdateVersionHost)
+//     return &NewWebUI<UpdateVersionUI>;
+  if (url.host() == chrome::kChromeUICocosUpdateVersionHost)
+    return &NewWebUI<HelloWorldUI>;
+
+
+// 20150603 add by leo
   /****************************************************************************
    * OS Specific #defines
    ***************************************************************************/

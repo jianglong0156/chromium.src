@@ -1,7 +1,7 @@
 COMPANY_FULLNAME=The Chromium Authors
 COMPANY_SHORTNAME=The Chromium Authors
-PRODUCT_FULLNAME=Chromium
-PRODUCT_SHORTNAME=Chromium
-PRODUCT_INSTALLER_FULLNAME=Chromium Installer
-PRODUCT_INSTALLER_SHORTNAME=Chromium Installer
+PRODUCT_FULLNAME=Coco Simulator
+PRODUCT_SHORTNAME=Coco Simulator
+PRODUCT_INSTALLER_FULLNAME=Coco Simulator Installer
+PRODUCT_INSTALLER_SHORTNAME=Coco Simulator Installer
 COPYRIGHT=Copyright 2014 The Chromium Authors. All rights reserved.

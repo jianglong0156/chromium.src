@@ -15648,6 +15648,19 @@ Do you accept?
         <ph name="EVENT_NAME">$3<ex>Event Description</ex></ph>
       </message>
 
+      <message name="IDS_COCOS_UPDATE_VERSION_TITLE" desc="title updating new version tips">
+        FIND NEW VERSION!
+      </message>
+      <message name="IDS_COCOS_UPDATE_VERSION_TEXT" desc="Message updating new version tips">
+        DO YOU WANT TO UPDATE NEW VERSION? <ph name="WELCOME_NAME">$1<ex>Chromium User</ex></ph>!
+      </message>
+      <message name="IDS_HELLO_WORLD_TITLE" desc="A happy message saying hello to the world">
+        Hello World!
+      </message>
+      <message name="IDS_HELLO_WORLD_WELCOME_TEXT" desc="Message welcoming the user to the hello world page">
+      Welcome to this fancy Hello World page <ph name="WELCOME_NAME">$1<ex>Chromium User</ex></ph>!
+      </message>
+
     </messages>
   </release>
 </grit>

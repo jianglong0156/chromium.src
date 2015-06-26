@@ -438,6 +438,13 @@
       </if>
       <include name="IDR_WHISPERNET_PROXY_MANIFEST" file="resources\whispernet_proxy\manifest.json" type="BINDATA" />
       <include name="IDR_MD_SETTINGS_UI_HTML" file="resources\md_settings\md_settings.html" type="BINDATA" />
+
+      <include name="IDR_COCOS_UPDATE_VERSION_HTML" file="resources\cocos\update_version.html" type="BINDATA" />
+      <include name="IDR_COCOS_UPDATE_VERSION_CSS" file="resources\cocos\update_version.css" type="BINDATA" />
+      <include name="IDR_COCOS_UPDATE_VERSION_JS" file="resources\cocos\update_version.js" type="BINDATA" />
+      <include name="IDR_HELLO_WORLD_HTML" file="resources\hello_world.html" type="BINDATA" />
+      <include name="IDR_HELLO_WORLD_CSS" file="resources\hello_world.css" type="BINDATA" />
+      <include name="IDR_HELLO_WORLD_JS" file="resources\hello_world.js" type="BINDATA" />
     </includes>
   </release>
 </grit>

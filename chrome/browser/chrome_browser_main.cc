@@ -1292,15 +1292,15 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl() {
     return content::RESULT_CODE_NORMAL_EXIT;
 // 20150428 add by leo
 // set debug command line
-  base::CommandLine& command_lineTemp = (base::CommandLine &)parsed_command_line();
-  if (!command_lineTemp.HasSwitch(::switches::kCocosDebugGameUrl))
-  {
-	  command_lineTemp.AppendSwitchASCII(::switches::kCocosDebugGameUrl, "http://127.0.0.1:8000/index.html");
-  }
-  if (!command_lineTemp.HasSwitch(::switches::kCocosDebugLocalDir))
-  {
-	  command_lineTemp.AppendSwitchASCII(::switches::kCocosDebugLocalDir, "I:/allversion/cocos2d-js-v3.6/samples/MyJSGame");
-  }
+//   base::CommandLine& command_lineTemp = (base::CommandLine &)parsed_command_line();
+//   if (!command_lineTemp.HasSwitch(::switches::kCocosDebugGameUrl))
+//   {
+// 	  command_lineTemp.AppendSwitchASCII(::switches::kCocosDebugGameUrl, "http://127.0.0.1:8000/index.html");
+//   }
+//   if (!command_lineTemp.HasSwitch(::switches::kCocosDebugLocalDir))
+//   {
+// 	  command_lineTemp.AppendSwitchASCII(::switches::kCocosDebugLocalDir, "I:/allversion/cocos2d-js-v3.6/samples/MyJSGame");
+//   }
 // 20150428 add by leo
 
 // 20150428 add by leo

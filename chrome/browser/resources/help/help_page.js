@@ -72,8 +72,14 @@ cr.define('help', function() {
       if (productTOS)
         productTOS.innerHTML = loadTimeData.getString('productTOS');
 
+      var dialog = document.querySelector('dialog');
       $('get-help').onclick = function() {
-        chrome.send('openHelpPage');
+        //chrome.send('openHelpPage');
+        dialog.showModal();
+      };
+
+      $('close').onclick = function() {
+        dialog.close();
       };
 <if expr="_google_chrome">
       $('report-issue').onclick = function() {
