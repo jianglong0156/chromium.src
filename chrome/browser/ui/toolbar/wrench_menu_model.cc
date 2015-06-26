@@ -839,88 +839,89 @@ void WrenchMenuModel::Build() {
   if (extensions::FeatureSwitch::extension_action_redesign()->IsEnabled())
     CreateExtensionToolbarOverflowMenu();
 
-  AddItemWithStringId(IDC_NEW_TAB, IDS_NEW_TAB);
-  AddItemWithStringId(IDC_NEW_WINDOW, IDS_NEW_WINDOW);
+  // 20150626 add by leo, hide the menuItem
+  //AddItemWithStringId(IDC_NEW_TAB, IDS_NEW_TAB);
+  //AddItemWithStringId(IDC_NEW_WINDOW, IDS_NEW_WINDOW);
 
-  if (ShouldShowNewIncognitoWindowMenuItem())
-    AddItemWithStringId(IDC_NEW_INCOGNITO_WINDOW, IDS_NEW_INCOGNITO_WINDOW);
+//   if (ShouldShowNewIncognitoWindowMenuItem())
+//     AddItemWithStringId(IDC_NEW_INCOGNITO_WINDOW, IDS_NEW_INCOGNITO_WINDOW);
 
-  bookmark_sub_menu_model_.reset(new BookmarkSubMenuModel(this, browser_));
-  AddSubMenuWithStringId(IDC_BOOKMARKS_MENU, IDS_BOOKMARKS_MENU,
-                         bookmark_sub_menu_model_.get());
+//   bookmark_sub_menu_model_.reset(new BookmarkSubMenuModel(this, browser_));
+//   AddSubMenuWithStringId(IDC_BOOKMARKS_MENU, IDS_BOOKMARKS_MENU,
+//                          bookmark_sub_menu_model_.get());
+// 
+//   if (!browser_->profile()->IsOffTheRecord()) {
+//     recent_tabs_sub_menu_model_.reset(new RecentTabsSubMenuModel(provider_,
+//                                                                  browser_,
+//                                                                  NULL));
+//     AddSubMenuWithStringId(IDC_RECENT_TABS_MENU, IDS_RECENT_TABS_MENU,
+//                            recent_tabs_sub_menu_model_.get());
+//   }
 
-  if (!browser_->profile()->IsOffTheRecord()) {
-    recent_tabs_sub_menu_model_.reset(new RecentTabsSubMenuModel(provider_,
-                                                                 browser_,
-                                                                 NULL));
-    AddSubMenuWithStringId(IDC_RECENT_TABS_MENU, IDS_RECENT_TABS_MENU,
-                           recent_tabs_sub_menu_model_.get());
-  }
-
-#if defined(OS_WIN)
-  base::win::Version min_version_for_ash_mode = base::win::VERSION_WIN8;
-  // Windows 7 ASH mode is only supported in DEBUG for now.
-#if !defined(NDEBUG)
-  min_version_for_ash_mode = base::win::VERSION_WIN7;
-#endif
-  // Windows 8 can support ASH mode using WARP, but Windows 7 requires a working
-  // GPU compositor.
-  if ((base::win::GetVersion() >= min_version_for_ash_mode &&
-      content::GpuDataManager::GetInstance()->CanUseGpuBrowserCompositor()) ||
-      (base::win::GetVersion() >= base::win::VERSION_WIN8)) {
-    if (browser_->host_desktop_type() == chrome::HOST_DESKTOP_TYPE_ASH) {
-      // ASH/Metro mode, add the 'Relaunch Chrome in desktop mode'.
-      AddSeparator(ui::NORMAL_SEPARATOR);
-      AddItemWithStringId(IDC_WIN_DESKTOP_RESTART, IDS_WIN_DESKTOP_RESTART);
-    } else {
-      // In Windows 8 desktop, add the 'Relaunch Chrome in Windows 8 mode'.
-      // In Windows 7 desktop, add the 'Relaunch Chrome in Windows ASH mode'
-      AddSeparator(ui::NORMAL_SEPARATOR);
-      if (base::win::GetVersion() >= base::win::VERSION_WIN8) {
-        AddItemWithStringId(IDC_WIN8_METRO_RESTART, IDS_WIN8_METRO_RESTART);
-      } else {
-        AddItemWithStringId(IDC_WIN_CHROMEOS_RESTART, IDS_WIN_CHROMEOS_RESTART);
-      }
-    }
-  }
-#endif
+// #if defined(OS_WIN)
+//   base::win::Version min_version_for_ash_mode = base::win::VERSION_WIN8;
+//   // Windows 7 ASH mode is only supported in DEBUG for now.
+// #if !defined(NDEBUG)
+//   min_version_for_ash_mode = base::win::VERSION_WIN7;
+// #endif
+//   // Windows 8 can support ASH mode using WARP, but Windows 7 requires a working
+//   // GPU compositor.
+//   if ((base::win::GetVersion() >= min_version_for_ash_mode &&
+//       content::GpuDataManager::GetInstance()->CanUseGpuBrowserCompositor()) ||
+//       (base::win::GetVersion() >= base::win::VERSION_WIN8)) {
+//     if (browser_->host_desktop_type() == chrome::HOST_DESKTOP_TYPE_ASH) {
+//       // ASH/Metro mode, add the 'Relaunch Chrome in desktop mode'.
+//       AddSeparator(ui::NORMAL_SEPARATOR);
+//       AddItemWithStringId(IDC_WIN_DESKTOP_RESTART, IDS_WIN_DESKTOP_RESTART);
+//     } else {
+//       // In Windows 8 desktop, add the 'Relaunch Chrome in Windows 8 mode'.
+//       // In Windows 7 desktop, add the 'Relaunch Chrome in Windows ASH mode'
+//       AddSeparator(ui::NORMAL_SEPARATOR);
+//       if (base::win::GetVersion() >= base::win::VERSION_WIN8) {
+//         AddItemWithStringId(IDC_WIN8_METRO_RESTART, IDS_WIN8_METRO_RESTART);
+//       } else {
+//         AddItemWithStringId(IDC_WIN_CHROMEOS_RESTART, IDS_WIN_CHROMEOS_RESTART);
+//       }
+//     }
+//   }
+// #endif
 
   // Append the full menu including separators. The final separator only gets
   // appended when this is a touch menu - otherwise it would get added twice.
-  CreateCutCopyPasteMenu();
-
-  if (base::CommandLine::ForCurrentProcess()->HasSwitch(
-          switches::kEnableDomDistiller)) {
-    AddItemWithStringId(IDC_DISTILL_PAGE, IDS_DISTILL_PAGE);
-  }
-
-  AddItemWithStringId(IDC_SAVE_PAGE, IDS_SAVE_PAGE);
-  AddItemWithStringId(IDC_FIND, IDS_FIND);
-  AddItemWithStringId(IDC_PRINT, IDS_PRINT);
+//   CreateCutCopyPasteMenu();
+// 
+//   if (base::CommandLine::ForCurrentProcess()->HasSwitch(
+//           switches::kEnableDomDistiller)) {
+//     AddItemWithStringId(IDC_DISTILL_PAGE, IDS_DISTILL_PAGE);
+//   }
+// 
+//   AddItemWithStringId(IDC_SAVE_PAGE, IDS_SAVE_PAGE);
+//   AddItemWithStringId(IDC_FIND, IDS_FIND);
+//   AddItemWithStringId(IDC_PRINT, IDS_PRINT);
 
   tools_menu_model_.reset(new ToolsMenuModel(this, browser_));
-  CreateZoomMenu();
+  //CreateZoomMenu();
 
-  AddItemWithStringId(IDC_SHOW_HISTORY, IDS_SHOW_HISTORY);
-  AddItemWithStringId(IDC_SHOW_DOWNLOADS, IDS_SHOW_DOWNLOADS);
-  AddSeparator(ui::NORMAL_SEPARATOR);
+  //AddItemWithStringId(IDC_SHOW_HISTORY, IDS_SHOW_HISTORY);
+  //AddItemWithStringId(IDC_SHOW_DOWNLOADS, IDS_SHOW_DOWNLOADS);
+  //AddSeparator(ui::NORMAL_SEPARATOR);
 
 #if !defined(OS_CHROMEOS)
-  if (!switches::IsNewAvatarMenu()) {
-    // No "Sign in to Chromium..." menu item on ChromeOS.
-    SigninManager* signin = SigninManagerFactory::GetForProfile(
-        browser_->profile()->GetOriginalProfile());
-    if (signin && signin->IsSigninAllowed()) {
-      const base::string16 short_product_name =
-          l10n_util::GetStringUTF16(IDS_SHORT_PRODUCT_NAME);
-      AddItem(IDC_SHOW_SYNC_SETUP, l10n_util::GetStringFUTF16(
-          IDS_SYNC_MENU_PRE_SYNCED_LABEL, short_product_name));
-      AddSeparator(ui::NORMAL_SEPARATOR);
-    }
-  }
+//   if (!switches::IsNewAvatarMenu()) {
+//     // No "Sign in to Chromium..." menu item on ChromeOS.
+//     SigninManager* signin = SigninManagerFactory::GetForProfile(
+//         browser_->profile()->GetOriginalProfile());
+//     if (signin && signin->IsSigninAllowed()) {
+//       const base::string16 short_product_name =
+//           l10n_util::GetStringUTF16(IDS_SHORT_PRODUCT_NAME);
+//       AddItem(IDC_SHOW_SYNC_SETUP, l10n_util::GetStringFUTF16(
+//           IDS_SYNC_MENU_PRE_SYNCED_LABEL, short_product_name));
+//       AddSeparator(ui::NORMAL_SEPARATOR);
+//     }
+//   }
 #endif
 
-  AddItemWithStringId(IDC_OPTIONS, IDS_SETTINGS);
+  //AddItemWithStringId(IDC_OPTIONS, IDS_SETTINGS);
 
 // On ChromeOS we don't want the about menu option.
 #if !defined(OS_CHROMEOS)
