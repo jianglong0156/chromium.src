@@ -74,8 +74,8 @@
 #include "ui/web_dialogs/web_dialog_ui.h"
 #include "url/gurl.h"
 // 20150603 add by leo
-#include "chrome/browser/ui/webui/cocos/update_version_ui.h"
-#include "chrome/browser/ui/webui/hello_world_ui.h"
+// #include "chrome/browser/ui/webui/cocos/update_version_ui.h"
+// #include "chrome/browser/ui/webui/hello_world_ui.h"
 // 20150603 add by leo
 
 #if !defined(DISABLE_NACL)
@@ -347,8 +347,8 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* web_ui,
 // 20150603 add by leo
 //   if (url.host() == chrome::kChromeUICocosUpdateVersionHost)
 //     return &NewWebUI<UpdateVersionUI>;
-  if (url.host() == chrome::kChromeUICocosUpdateVersionHost)
-    return &NewWebUI<HelloWorldUI>;
+  // if (url.host() == chrome::kChromeUICocosUpdateVersionHost)
+  //   return &NewWebUI<HelloWorldUI>;
 
 
 // 20150603 add by leo
