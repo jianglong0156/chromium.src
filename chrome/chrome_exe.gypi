@@ -51,7 +51,7 @@
       'target_name': 'chrome_initial',
       'type': 'executable',
       # Name the exe chrome.exe, not chrome_initial.exe.
-      'product_name': 'chrome',
+      'product_name': 'CocoSimulator',
       'mac_bundle': 1,
       'variables': {
         'use_system_xdg_utils%': 0,
