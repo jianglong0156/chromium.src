@@ -27,11 +27,11 @@
               'action_name': 'reorder_imports',
               'inputs': [
                 '<(reorder_py_path)',
-                '$(OutDir)\\initialexe\\chrome.exe',
+                '$(OutDir)\\initialexe\\CocoSimulator.exe',
               ],
               'outputs': [
-                '<(PRODUCT_DIR)\\chrome.exe',
-                '<(PRODUCT_DIR)\\chrome.exe.pdb',
+                '<(PRODUCT_DIR)\\CocoSimulator.exe',
+                '<(PRODUCT_DIR)\\CocoSimulator.exe.pdb',
               ],
               'action': [
                 'python',
@@ -506,7 +506,7 @@
           'msvs_settings': {
             'VCLinkerTool': {
               'ImportLibrary': '$(OutDir)\\lib\\chrome_exe.lib',
-              'OutputFile': '$(OutDir)\\initialexe\\chrome.exe',
+              'OutputFile': '$(OutDir)\\initialexe\\CocoSimulator.exe',
               'DelayLoadDLLs': [
                 'dbghelp.dll',
                 'dwmapi.dll',
@@ -528,7 +528,7 @@
             },
             'VCManifestTool': {
               'AdditionalManifestFiles': [
-                '$(ProjectDir)\\app\\chrome.exe.manifest',
+                '$(ProjectDir)\\app\\CocoSimulator.exe.manifest',
                 '<(SHARED_INTERMEDIATE_DIR)/chrome/app/version_assembly/version_assembly.manifest',
               ],
             },
