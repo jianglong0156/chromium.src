@@ -27,11 +27,11 @@
               'action_name': 'reorder_imports',
               'inputs': [
                 '<(reorder_py_path)',
-                '$(OutDir)\\initialexe\\CocoSimulator.exe',
+                '$(OutDir)\\initialexe\\chrome.exe',
               ],
               'outputs': [
-                '<(PRODUCT_DIR)\\CocoSimulator.exe',
-                '<(PRODUCT_DIR)\\CocoSimulator.exe.pdb',
+                '<(PRODUCT_DIR)\\chrome.exe',
+                '<(PRODUCT_DIR)\\chrome.exe.pdb',
               ],
               'action': [
                 'python',
@@ -51,7 +51,7 @@
       'target_name': 'chrome_initial',
       'type': 'executable',
       # Name the exe chrome.exe, not chrome_initial.exe.
-      'product_name': 'CocoSimulator',
+      'product_name': 'chrome',
       'mac_bundle': 1,
       'variables': {
         'use_system_xdg_utils%': 0,
@@ -506,7 +506,7 @@
           'msvs_settings': {
             'VCLinkerTool': {
               'ImportLibrary': '$(OutDir)\\lib\\chrome_exe.lib',
-              'OutputFile': '$(OutDir)\\initialexe\\CocoSimulator.exe',
+              'OutputFile': '$(OutDir)\\initialexe\\chrome.exe',
               'DelayLoadDLLs': [
                 'dbghelp.dll',
                 'dwmapi.dll',
@@ -528,7 +528,7 @@
             },
             'VCManifestTool': {
               'AdditionalManifestFiles': [
-                '$(ProjectDir)\\app\\CocoSimulator.exe.manifest',
+                '$(ProjectDir)\\app\\chrome.exe.manifest',
                 '<(SHARED_INTERMEDIATE_DIR)/chrome/app/version_assembly/version_assembly.manifest',
               ],
             },
