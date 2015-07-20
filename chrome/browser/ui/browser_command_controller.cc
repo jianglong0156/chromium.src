@@ -44,6 +44,10 @@
 #include "extensions/browser/extension_system.h"
 #include "ui/events/keycodes/keyboard_codes.h"
 
+// 20150720 add by leo
+#include "content/public/browser/page_navigator.h"
+// 20150720 add by leo
+
 #if defined(OS_MACOSX)
 #include "chrome/browser/ui/browser_commands_mac.h"
 #endif
@@ -388,6 +392,15 @@ void BrowserCommandController::ExecuteCommandWithDisposition(
     case IDC_RELOAD:
       Reload(browser_, disposition);
       break;
+    case IDC_SHOW_DEVTOOL:
+      {
+          std::string cdtUrl = "javascript:void(function(d,a,c,b){!d[c]&&(typeof d[c]=='undefined')&&(b=a.createElement('script'),b.id='cocos_devtools_script',b.setAttribute('charset','utf-8'),b.src='http://h5apps.appget.cn/static/js/cocos-devtools-web.min.js?'+Math.floor(+new Date),a.body.appendChild(b))}(window,document,'_cocos_devtools'));";
+          content::OpenURLParams params(
+              GURL(cdtUrl), content::Referrer(), disposition,
+              ui::PAGE_TRANSITION_AUTO_BOOKMARK, false);
+          browser_->tab_strip_model()->GetActiveWebContents()->OpenURL(params);
+      }
+      break;
     case IDC_RELOAD_CLEARING_CACHE:
       ClearCache(browser_);
       // FALL THROUGH
@@ -466,7 +479,7 @@ void BrowserCommandController::ExecuteCommandWithDisposition(
       chrome::ToggleFullscreenMode(browser_);
 #endif
       break;
-
+      
 #if defined(OS_CHROMEOS)
     case IDC_VISIT_DESKTOP_OF_LRU_USER_2:
     case IDC_VISIT_DESKTOP_OF_LRU_USER_3:
