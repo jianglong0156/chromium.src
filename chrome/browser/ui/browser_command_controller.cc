@@ -395,7 +395,7 @@ void BrowserCommandController::ExecuteCommandWithDisposition(
     //  20150720 add by leo
     case IDC_SHOW_DEVTOOL:
       {
-          std::string cdtUrl = "javascript: void(function(d, a, c, b) {if (!d[c] && (typeof d[c] == 'undefined')){b = a.createElement('script'), b.id = 'cocos_devtools_script', b.setAttribute('charset', 'utf-8'), b.src = 'http://h5apps.appget.cn/static/js/cocos-devtools-web.min.js?' + Math.floor(+new Date), a.body.appendChild(b);}else{var tabArr = a.getElementsByClassName('tl-ui-tabs clear');if (tabArr.length > 0 && tabArr[0].parentNode.style.display == 'none'){tabArr[0].parentNode.style.display = 'block';}else {tabArr[0].parentNode.style.display = 'none';}}}(window, document, '_cocos_devtools'));";
+        std::string cdtUrl = "javascript: void(function(d, a, c, b) {if (!d[c] && (typeof d[c] == 'undefined')){b = a.createElement('script'), b.id = 'cocos_devtools_script', b.setAttribute('charset', 'utf-8'), b.src = 'http://h5apps.appget.cn/static/js/cocos-devtools-web.min.js?' + Math.floor(+new Date), a.body.appendChild(b);}else{var tabArr = a.getElementsByClassName('tl-ui-tabs clear');if (tabArr.length > 0 && tabArr[0].parentNode.style.display == 'none'){tabArr[0].parentNode.style.display = 'block';}else {tabArr[0].parentNode.style.display = 'none';}}}(window, document, '_cocos_devtools'));";
         content::OpenURLParams params(
           GURL(cdtUrl), content::Referrer(), disposition,
           ui::PAGE_TRANSITION_AUTO_BOOKMARK, false);
