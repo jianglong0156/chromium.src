@@ -576,7 +576,7 @@ void StartupBrowserCreatorImpl::ProcessLaunchURLs(
         AddInfoBarsIfNecessary(browser, is_process_startup);
 // 2015-06-02 add by leo
   // open devtools after browser start
-  chrome::ExecuteCommand(browser, IDC_DEV_TOOLS);
+        chrome::ExecuteCommand(browser, IDC_DEV_TOOLS_SOURCES);
 // 2015-06-02 add by leo
         return;
       }
@@ -601,7 +601,7 @@ void StartupBrowserCreatorImpl::ProcessLaunchURLs(
   AddInfoBarsIfNecessary(browser, is_process_startup);
   // 2015-06-02 add by leo
   // open devtools after browser start
-  chrome::ExecuteCommand(browser, IDC_DEV_TOOLS);
+  chrome::ExecuteCommand(browser, IDC_DEV_TOOLS_SOURCES);
   // 2015-06-02 add by leo
 }
 
@@ -679,7 +679,7 @@ bool StartupBrowserCreatorImpl::ProcessStartupURLs(
   
   // 2015-05-06 add by leo
   // open devtools after browser start
-  chrome::ExecuteCommand(browser, IDC_DEV_TOOLS);
+  chrome::ExecuteCommand(browser, IDC_DEV_TOOLS_SOURCES);
   // 2015-05-06 add by leo
 
   // Session restore may occur if the startup preference is "last" or if the

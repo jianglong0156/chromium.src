@@ -699,6 +699,11 @@ void BrowserCommandController::ExecuteCommandWithDisposition(
     case IDC_DEV_TOOLS_CONSOLE:
       ToggleDevToolsWindow(browser_, DevToolsToggleAction::ShowConsole());
       break;
+    //20150721 add by leo
+    case IDC_DEV_TOOLS_SOURCES:
+      ToggleDevToolsWindow(browser_, DevToolsToggleAction::ShowSources());
+      break;
+    //20150721 add by leo
     case IDC_DEV_TOOLS_DEVICES:
       InspectUI::InspectDevices(browser_);
       break;
@@ -1180,6 +1185,10 @@ void BrowserCommandController::UpdateCommandsForDevTools() {
       !profile()->GetPrefs()->GetBoolean(prefs::kDevToolsDisabled);
   command_updater_.UpdateCommandEnabled(IDC_DEV_TOOLS,
                                         dev_tools_enabled);
+  // 20150721 add by leo
+  command_updater_.UpdateCommandEnabled(IDC_DEV_TOOLS_SOURCES,
+                                        dev_tools_enabled);
+  // 20150721 add by leo
   command_updater_.UpdateCommandEnabled(IDC_DEV_TOOLS_CONSOLE,
                                         dev_tools_enabled);
   command_updater_.UpdateCommandEnabled(IDC_DEV_TOOLS_DEVICES,

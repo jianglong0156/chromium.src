@@ -426,7 +426,11 @@ void Panel::ExecuteCommandWithDisposition(int id,
       DevToolsWindow::OpenDevToolsWindow(GetWebContents(),
                                          DevToolsToggleAction::ShowConsole());
       break;
-
+    case IDC_DEV_TOOLS_SOURCES:
+      content::RecordAction(UserMetricsAction("DevTools_ToggleWindow"));
+      DevToolsWindow::OpenDevToolsWindow(GetWebContents(),
+                                         DevToolsToggleAction::ShowSources());
+      break;
     default:
       LOG(WARNING) << "Received unimplemented command: " << id;
       break;
@@ -863,6 +867,9 @@ void Panel::InitCommandState() {
   // DevTools
   command_updater_.UpdateCommandEnabled(IDC_DEV_TOOLS, true);
   command_updater_.UpdateCommandEnabled(IDC_DEV_TOOLS_CONSOLE, true);
+  // 20150721 add by leo
+  command_updater_.UpdateCommandEnabled(IDC_DEV_TOOLS_SOURCES, true);
+  // 20150721 add by leo
 }
 
 void Panel::ConfigureAutoResize(content::WebContents* web_contents) {

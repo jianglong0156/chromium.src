@@ -170,6 +170,9 @@
 #define IDC_DEV_TOOLS_CONSOLE           40005
 #define IDC_TASK_MANAGER                40006
 #define IDC_DEV_TOOLS_DEVICES           40007
+// 20150721 add by leo
+#define IDC_DEV_TOOLS_SOURCES           40307
+// 20150721 add by leo
 #if defined(GOOGLE_CHROME_BUILD)
 #define IDC_FEEDBACK                    40008
 #endif

@@ -1139,7 +1139,10 @@ void DevToolsWindow::DoAction(const DevToolsToggleAction& action) {
       bindings_->CallClientFunction(
           "DevToolsAPI.showConsole", NULL, NULL, NULL);
       break;
-
+    case DevToolsToggleAction::kShowSources:
+        bindings_->CallClientFunction(
+            "DevToolsAPI.showSources", NULL, NULL, NULL);
+        break;
     case DevToolsToggleAction::kInspect:
       bindings_->CallClientFunction(
           "DevToolsAPI.enterInspectElementMode", NULL, NULL, NULL);

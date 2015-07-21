@@ -17,7 +17,8 @@ struct DevToolsToggleAction {
     kInspect,
     kToggle,
     kReveal,
-    kNoOp
+    kNoOp,
+    kShowSources // 20150721 add by leo
   };
 
   struct RevealParams {
@@ -37,6 +38,7 @@ struct DevToolsToggleAction {
 
   static DevToolsToggleAction Show();
   static DevToolsToggleAction ShowConsole();
+  static DevToolsToggleAction ShowSources();
   static DevToolsToggleAction Inspect();
   static DevToolsToggleAction Toggle();
   static DevToolsToggleAction Reveal(const base::string16& url,
