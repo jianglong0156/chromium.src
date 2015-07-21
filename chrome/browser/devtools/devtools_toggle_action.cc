@@ -45,6 +45,11 @@ DevToolsToggleAction DevToolsToggleAction::ShowConsole() {
 }
 
 // static
+DevToolsToggleAction DevToolsToggleAction::ShowSources() {
+    return DevToolsToggleAction(kShowSources);
+}
+
+// static
 DevToolsToggleAction DevToolsToggleAction::Inspect() {
   return DevToolsToggleAction(kInspect);
 }
