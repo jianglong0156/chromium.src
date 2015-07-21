@@ -44,6 +44,9 @@
 #include "chrome/browser/ui/views/toolbar/home_button.h"
 #include "chrome/browser/ui/views/toolbar/reload_button.h"
 #include "chrome/browser/ui/views/toolbar/toolbar_button.h"
+//20150717 add by leo
+#include "chrome/browser/ui/views/toolbar/devtool_button.h"
+//20150717 add by leo
 #include "chrome/browser/ui/views/toolbar/wrench_menu.h"
 #include "chrome/browser/ui/views/toolbar/wrench_toolbar_button.h"
 #include "chrome/common/chrome_switches.h"
@@ -126,6 +129,7 @@ ToolbarView::ToolbarView(Browser* browser)
     : back_(NULL),
       forward_(NULL),
       reload_(NULL),
+      devtool_(NULL), //20150716 add by leo
       home_(NULL),
       location_bar_(NULL),
       browser_actions_(NULL),
@@ -143,6 +147,9 @@ ToolbarView::ToolbarView(Browser* browser)
   chrome::AddCommandObserver(browser_, IDC_BACK, this);
   chrome::AddCommandObserver(browser_, IDC_FORWARD, this);
   chrome::AddCommandObserver(browser_, IDC_RELOAD, this);
+  // 20150720 add by leo
+  chrome::AddCommandObserver(browser_, IDC_SHOW_DEVTOOL, this);
+  // 20150720 add by leo
   chrome::AddCommandObserver(browser_, IDC_HOME, this);
   chrome::AddCommandObserver(browser_, IDC_LOAD_NEW_TAB_PAGE, this);
 
@@ -204,6 +211,16 @@ void ToolbarView::Init() {
   reload_->set_id(VIEW_ID_RELOAD_BUTTON);
   reload_->Init();
 
+//20150716 add by leo
+  devtool_ = new DevtoolButton(browser_->command_controller()->command_updater());
+  devtool_->set_triggerable_event_flags(
+      ui::EF_LEFT_MOUSE_BUTTON | ui::EF_MIDDLE_MOUSE_BUTTON);
+  devtool_->set_tag(IDC_SHOW_DEVTOOL);
+  devtool_->SetAccessibleName(l10n_util::GetStringUTF16(IDS_ACCNAME_RELOAD));
+  devtool_->set_id(VIEW_ID_RELOAD_BUTTON);
+  devtool_->Init();
+//20150716 add by leo
+
   home_ = new HomeButton(this, browser_);
   home_->set_triggerable_event_flags(
       ui::EF_LEFT_MOUSE_BUTTON | ui::EF_MIDDLE_MOUSE_BUTTON);
@@ -227,6 +244,11 @@ void ToolbarView::Init() {
   AddChildView(back_);
   AddChildView(forward_);
   AddChildView(reload_);
+
+  //20150716 add by leo
+  AddChildView(devtool_);
+  //20150716 add by leo
+
   AddChildView(home_);
   AddChildView(location_bar_);
   AddChildView(browser_actions_);
@@ -457,6 +479,11 @@ void ToolbarView::EnabledStateChangedForCommand(int id, bool enabled) {
     case IDC_HOME:
       button = home_;
       break;
+      //20150716 add by leo
+    case IDC_SHOW_DEVTOOL:
+      button = devtool_;
+      break;
+      //20150716 add by leo
   }
   if (button)
     button->SetEnabled(enabled);
@@ -511,6 +538,7 @@ gfx::Size ToolbarView::GetPreferredSize() const {
     int content_width = kLeftEdgeSpacing + back_->GetPreferredSize().width() +
         forward_->GetPreferredSize().width() +
         reload_->GetPreferredSize().width() +
+        devtool_->GetPreferredSize().width() +//20150716 add by leo
         (show_home_button_.GetValue() ? home_->GetPreferredSize().width() : 0) +
         kStandardSpacing + browser_actions_->GetPreferredSize().width() +
         app_menu_->GetPreferredSize().width() + kRightEdgeSpacing;
@@ -524,6 +552,7 @@ gfx::Size ToolbarView::GetMinimumSize() const {
   if (is_display_mode_normal()) {
     int content_width = kLeftEdgeSpacing + back_->GetMinimumSize().width() +
         forward_->GetMinimumSize().width() + reload_->GetMinimumSize().width() +
+        devtool_->GetMinimumSize().width() + //20150716 add by leo
         (show_home_button_.GetValue() ? home_->GetMinimumSize().width() : 0) +
         kStandardSpacing + browser_actions_->GetMinimumSize().width() +
         app_menu_->GetMinimumSize().width() + kRightEdgeSpacing;
@@ -575,7 +604,11 @@ void ToolbarView::Layout() {
   reload_->SetBounds(next_element_x, child_y,
                      reload_->GetPreferredSize().width(), child_height);
   next_element_x = reload_->bounds().right();
-
+//20150716 add by leo
+  devtool_->SetBounds(next_element_x, child_y,
+                      devtool_->GetPreferredSize().width(), child_height);
+  next_element_x = devtool_->bounds().right();
+//20150716 add by leo
   if (show_home_button_.GetValue() ||
       (browser_->is_app() && extensions::util::IsNewBookmarkAppsEnabled())) {
     home_->SetVisible(true);
@@ -765,7 +798,9 @@ void ToolbarView::LoadImages() {
                     *(tp->GetImageSkiaNamed(IDR_FORWARD)));
   forward_->SetImage(views::Button::STATE_DISABLED,
                      *(tp->GetImageSkiaNamed(IDR_FORWARD_D)));
-
+//20150716 add by leo
+  devtool_->LoadImages();
+//20150716 add by leo
   reload_->LoadImages();
 
   home_->SetImage(views::Button::STATE_NORMAL,

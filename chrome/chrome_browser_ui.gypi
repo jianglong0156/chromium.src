@@ -1904,6 +1904,8 @@
       'browser/ui/views/toolbar/home_button.h',
       'browser/ui/views/toolbar/reload_button.cc',
       'browser/ui/views/toolbar/reload_button.h',
+      'browser/ui/views/toolbar/devtool_button.cc',
+      'browser/ui/views/toolbar/devtool_button.h',
       'browser/ui/views/toolbar/toolbar_action_view.cc',
       'browser/ui/views/toolbar/toolbar_action_view.h',
       'browser/ui/views/toolbar/toolbar_action_view_delegate_views.h',

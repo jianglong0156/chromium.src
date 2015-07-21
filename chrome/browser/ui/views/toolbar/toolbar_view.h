@@ -24,6 +24,9 @@ class Browser;
 class HomeButton;
 class ReloadButton;
 class ToolbarButton;
+// 20150720 add by leo
+class DevtoolButton;
+// 20150720 add by leo
 class WrenchMenu;
 class WrenchMenuModel;
 class WrenchToolbarButton;
@@ -225,6 +228,9 @@ class ToolbarView : public views::AccessiblePaneView,
   BackButton* back_;
   ToolbarButton* forward_;
   ReloadButton* reload_;
+  // 20150720 add by leo
+  DevtoolButton* devtool_;
+  // 20150720 add by leo
   HomeButton* home_;
   LocationBarView* location_bar_;
   BrowserActionsContainer* browser_actions_;

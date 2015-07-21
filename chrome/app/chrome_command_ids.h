@@ -33,6 +33,9 @@
 #define IDC_RELOAD_IGNORING_CACHE       33007
 #define IDC_LOAD_NEW_TAB_PAGE           33008
 #define IDC_RELOAD_CLEARING_CACHE       33009
+// 20150720 add by leo
+#define IDC_SHOW_DEVTOOL                33100
+// 20150720 add by leo
 
 // Window management commands
 #define IDC_NEW_WINDOW                  34000
