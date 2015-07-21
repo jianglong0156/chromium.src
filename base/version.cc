@@ -165,6 +165,12 @@ const std::string Version::GetString() const {
   DCHECK(IsValid());
   std::string version_str;
   size_t count = components_.size();
+  // 20150709 add by leo fix the crash bug, if the components is zero
+  if (count == 0)
+  {
+      return "";
+  }
+  // 20150709 add by leo
   for (size_t i = 0; i < count - 1; ++i) {
     version_str.append(IntToString(components_[i]));
     version_str.append(".");
