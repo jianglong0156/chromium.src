@@ -46,6 +46,8 @@
 
 // 20150720 add by leo
 #include "content/public/browser/page_navigator.h"
+#include "base/strings/utf_string_conversions.h"
+#include "content/public/browser/render_frame_host.h"
 // 20150720 add by leo
 
 #if defined(OS_MACOSX)
@@ -396,10 +398,8 @@ void BrowserCommandController::ExecuteCommandWithDisposition(
     case IDC_SHOW_DEVTOOL:
       {
         std::string cdtUrl = "javascript: void(function(d, a, c, b) {if (!d[c] && (typeof d[c] == 'undefined')){b = a.createElement('script'), b.id = 'cocos_devtools_script', b.setAttribute('charset', 'utf-8'), b.src = 'http://h5apps.appget.cn/static/js/cocos-devtools-web.min.js?' + Math.floor(+new Date), a.body.appendChild(b);}else{var tabArr = a.getElementsByClassName('tl-ui-tabs clear');if (tabArr.length > 0 && tabArr[0].parentNode.style.display == 'none'){tabArr[0].parentNode.style.display = 'block';}else {tabArr[0].parentNode.style.display = 'none';}}}(window, document, '_cocos_devtools'));";
-        content::OpenURLParams params(
-          GURL(cdtUrl), content::Referrer(), disposition,
-          ui::PAGE_TRANSITION_AUTO_BOOKMARK, false);
-        browser_->tab_strip_model()->GetActiveWebContents()->OpenURL(params);
+        content::RenderFrameHost* frameHost = browser_->tab_strip_model()->GetActiveWebContents()->GetMainFrame();
+        frameHost->ExecuteJavaScript(base::UTF8ToUTF16(cdtUrl));
       } 
       break;
     //  20150720 add by leo
