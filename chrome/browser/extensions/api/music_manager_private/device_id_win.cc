@@ -194,13 +194,18 @@ std::string GetRlzMachineId() {
 void GetMacAddressCallback(const DeviceId::IdCallback& callback,
                            const std::string& mac_address) {
   DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
-
+// 20150725 add by leo record user data need the mac address
   std::string machine_id = GetRlzMachineId();
+#if defined(ENABLE_RLZ)
   if (mac_address.empty() || machine_id.empty()) {
     callback.Run("");
     return;
   }
   callback.Run(mac_address + machine_id);
+#else
+  callback.Run(mac_address);
+#endif
+  // 20150725 add by leo
 }
 
 }  // namespace
