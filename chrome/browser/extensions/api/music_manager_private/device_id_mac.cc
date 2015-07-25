@@ -224,9 +224,15 @@ void GetRawDeviceIdImpl(const IsValidMacAddressCallback& is_valid_mac_address,
   std::string raw_device_id;
   std::string mac_address = GetMacAddress(is_valid_mac_address);
   std::string disk_id = GetVolumeUUID();
+  // 20150725 add by leo
   if (!mac_address.empty() && !disk_id.empty()) {
     raw_device_id = mac_address + disk_id;
   }
+  else
+  {
+      raw_device_id = mac_address; // make sure return the mac address. the user record data need use mac address
+  }
+  // 20150725 add by leo
   content::BrowserThread::PostTask(
       content::BrowserThread::UI,
       FROM_HERE,
