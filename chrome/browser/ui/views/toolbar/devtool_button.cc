@@ -72,6 +72,7 @@ void DevtoolButton::ButtonPressed(views::Button* /* button */,
                                  const ui::Event& event) {
   ClearPendingMenu();
   ExecuteBrowserCommand(IDC_SHOW_DEVTOOL, event.flags());
+  ExecuteBrowserCommand(IDC_RECORD_APP_CLICK_CDT, event.flags());
 }
 
 void DevtoolButton::ExecuteBrowserCommand(int command, int event_flags) {

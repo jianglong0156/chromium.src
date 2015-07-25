@@ -35,6 +35,10 @@
 #define IDC_RELOAD_CLEARING_CACHE       33009
 // 20150720 add by leo
 #define IDC_SHOW_DEVTOOL                33100
+#define IDC_RECORD_APP_OPEN             33101
+#define IDC_RECORD_APP_CLOSE            33102
+#define IDC_RECORD_APP_CLICK_CDT        33103
+#define IDC_RECORD_APP_CRASH            33104
 // 20150720 add by leo
 
 // Window management commands
