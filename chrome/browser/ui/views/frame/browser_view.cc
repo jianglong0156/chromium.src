@@ -1265,7 +1265,16 @@ void BrowserView::ShowTranslateBubble(
 }
 
 bool BrowserView::ShowSessionCrashedBubble() {
-  return SessionCrashedBubbleView::Show(browser_.get());
+    // 20140724 2015 add by leo only record windows, mac platform will kill by studio when chromium run twice
+   
+#if defined(WIN32)
+    // crash happened
+    chrome::ExecuteCommand(browser(), IDC_RECORD_APP_CRASH);
+#endif
+    return true;
+  // 20140724 2015 add by leo
+  
+  //return SessionCrashedBubbleView::Show(browser_.get());
 }
 
 bool BrowserView::IsProfileResetBubbleSupported() const {
