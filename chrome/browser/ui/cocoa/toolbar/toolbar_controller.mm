@@ -198,6 +198,7 @@ class NotificationBridge : public WrenchMenuBadgeController::Delegate {
     commandObserver_->ObserveCommand(IDC_BACK);
     commandObserver_->ObserveCommand(IDC_FORWARD);
     commandObserver_->ObserveCommand(IDC_RELOAD);
+    commandObserver_->ObserveCommand(IDC_SHOW_DEVTOOL);
     commandObserver_->ObserveCommand(IDC_HOME);
     commandObserver_->ObserveCommand(IDC_BOOKMARK_PAGE);
   }
@@ -270,6 +271,13 @@ class NotificationBridge : public WrenchMenuBadgeController::Delegate {
   [[reloadButton_ cell] setImageID:IDR_RELOAD_P
                     forButtonState:image_button_cell::kPressedState];
 
+  [[devtool_ cell] setImageID:IDR_SHOW_DEVTOOL
+                    forButtonState:image_button_cell::kDefaultState];
+  [[devtool_ cell] setImageID:IDR_SHOW_DEVTOOL_H
+                    forButtonState:image_button_cell::kHoverState];
+  [[devtool_ cell] setImageID:IDR_SHOW_DEVTOOL_P
+                    forButtonState:image_button_cell::kPressedState];
+
   [[homeButton_ cell] setImageID:IDR_HOME
                   forButtonState:image_button_cell::kDefaultState];
   [[homeButton_ cell] setImageID:IDR_HOME_H
@@ -296,11 +304,14 @@ class NotificationBridge : public WrenchMenuBadgeController::Delegate {
   [backButton_ setHandleMiddleClick:YES];
   [forwardButton_ setHandleMiddleClick:YES];
   [reloadButton_ setHandleMiddleClick:YES];
+  // 20150729 add by leo
+  [devtool_ setHandleMiddleClick:YES];
+  // 20150729 add by leo
   [homeButton_ setHandleMiddleClick:YES];
 
   [self initCommandStatus:commands_];
   [reloadButton_ setCommandUpdater:commands_];
-
+  [devtool_ setCommandUpdater:commands_];
   locationBarView_.reset(new LocationBarViewMac(locationBar_, commands_,
                                                 profile_, browser_));
   [locationBar_ setFont:[NSFont systemFontOfSize:[NSFont systemFontSize]]];
@@ -365,6 +376,8 @@ class NotificationBridge : public WrenchMenuBadgeController::Delegate {
   view_id_util::SetID(homeButton_, VIEW_ID_HOME_BUTTON);
   view_id_util::SetID(wrenchButton_, VIEW_ID_APP_MENU);
 
+  [locationBar_ setHidden:true];
+
   [self addAccessibilityDescriptions];
 }
 
@@ -380,6 +393,10 @@ class NotificationBridge : public WrenchMenuBadgeController::Delegate {
                        forAttribute:NSAccessibilityDescriptionAttribute];
   description = l10n_util::GetNSStringWithFixup(IDS_ACCNAME_RELOAD);
   [[reloadButton_ cell]
+      accessibilitySetOverrideValue:description
+                       forAttribute:NSAccessibilityDescriptionAttribute];
+  description = l10n_util::GetNSStringWithFixup(IDS_ACCNAME_FORWARD);
+  [[devtool_ cell]
       accessibilitySetOverrideValue:description
                        forAttribute:NSAccessibilityDescriptionAttribute];
   description = l10n_util::GetNSStringWithFixup(IDS_ACCNAME_HOME);
@@ -464,6 +481,7 @@ class NotificationBridge : public WrenchMenuBadgeController::Delegate {
   [forwardButton_
       setEnabled:commands->IsCommandEnabled(IDC_FORWARD) ? YES : NO];
   [reloadButton_ setEnabled:YES];
+  [devtool_ setEnabled:YES];
   [homeButton_ setEnabled:commands->IsCommandEnabled(IDC_HOME) ? YES : NO];
 }
 
@@ -564,7 +582,7 @@ class NotificationBridge : public WrenchMenuBadgeController::Delegate {
 
 // Returns an array of views in the order of the outlets above.
 - (NSArray*)toolbarViews {
-  return [NSArray arrayWithObjects:backButton_, forwardButton_, reloadButton_,
+  return [NSArray arrayWithObjects:backButton_, forwardButton_, reloadButton_, devtool_,
              homeButton_, wrenchButton_, locationBar_,
              browserActionsContainerView_, nil];
 }
