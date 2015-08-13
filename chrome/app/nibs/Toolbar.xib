@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
+<archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">12D78</string>
-		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.37</string>
-		<string key="IBDocument.HIToolboxVersion">626.00</string>
+		<string key="IBDocument.SystemVersion">14D131</string>
+		<string key="IBDocument.InterfaceBuilderVersion">7706</string>
+		<string key="IBDocument.AppKitVersion">1347.57</string>
+		<string key="IBDocument.HIToolboxVersion">758.70</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">3084</string>
+			<string key="NS.object.0">7706</string>
 		</object>
-		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
-			<bool key="EncodedWithXMLCoder">YES</bool>
+		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSButton</string>
 			<string>NSButtonCell</string>
 			<string>NSCustomObject</string>
@@ -19,17 +18,15 @@
 			<string>NSTextField</string>
 			<string>NSTextFieldCell</string>
 			<string>NSUserDefaultsController</string>
-		</object>
-		<object class="NSArray" key="IBDocument.PluginDependencies">
-			<bool key="EncodedWithXMLCoder">YES</bool>
+		</array>
+		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-		</object>
+		</array>
 		<object class="NSMutableDictionary" key="IBDocument.Metadata">
 			<string key="NS.key.0">PluginDependencyRecalculationVersion</string>
 			<integer value="1" key="NS.object.0"/>
 		</object>
-		<object class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
-			<bool key="EncodedWithXMLCoder">YES</bool>
+		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
 			<object class="NSCustomObject" id="1001">
 				<string key="NSClassName">ToolbarController</string>
 			</object>
@@ -42,35 +39,58 @@
 			<object class="NSCustomView" id="928520650">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">266</int>
-				<object class="NSMutableArray" key="NSSubviews">
-					<bool key="EncodedWithXMLCoder">YES</bool>
+				<array class="NSMutableArray" key="NSSubviews">
+					<object class="NSButton" id="717320284">
+						<reference key="NSNextResponder" ref="928520650"/>
+						<int key="NSvFlags">268</int>
+						<string key="NSFrame">{{98, 4}, {84, 29}}</string>
+						<reference key="NSSuperview" ref="928520650"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="368496192"/>
+						<int key="NSTag">33002</int>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSButtonCell" key="NSCell" id="327249598">
+							<int key="NSCellFlags">67108864</int>
+							<int key="NSCellFlags2">134250496</int>
+							<string key="NSContents"/>
+							<object class="NSFont" key="NSSupport" id="64724822">
+								<bool key="IBIsSystemFont">YES</bool>
+								<double key="NSSize">13</double>
+								<int key="NSfFlags">1044</int>
+							</object>
+							<reference key="NSControlView" ref="717320284"/>
+							<int key="NSButtonFlags">-2042347520</int>
+							<int key="NSButtonFlags2">6</int>
+							<string key="NSAlternateContents"/>
+							<string key="NSKeyEquivalent"/>
+							<int key="NSPeriodicDelay">400</int>
+							<int key="NSPeriodicInterval">75</int>
+						</object>
+						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+					</object>
 					<object class="NSCustomView" id="421615633">
 						<reference key="NSNextResponder" ref="928520650"/>
 						<int key="NSvFlags">-2147483383</int>
 						<string key="NSFrame">{{572, 4}, {0, 29}}</string>
 						<reference key="NSSuperview" ref="928520650"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="602421009"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSClassName">BrowserActionsContainerView</string>
 					</object>
 					<object class="NSTextField" id="535508469">
 						<reference key="NSNextResponder" ref="928520650"/>
 						<int key="NSvFlags">266</int>
-						<string key="NSFrame">{{119, 4}, {454, 29}}</string>
+						<string key="NSFrame">{{207, 4}, {366, 29}}</string>
 						<reference key="NSSuperview" ref="928520650"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="421615633"/>
+						<reference key="NSNextKeyView" ref="602421009"/>
 						<int key="NSTag">33004</int>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="464583340">
 							<int key="NSCellFlags">-1804599231</int>
 							<int key="NSCellFlags2">66560</int>
 							<string key="NSContents"/>
-							<object class="NSFont" key="NSSupport">
-								<string key="NSName">LucidaGrande</string>
-								<double key="NSSize">13</double>
-								<int key="NSfFlags">16</int>
-							</object>
+							<reference key="NSSupport" ref="64724822"/>
 							<reference key="NSControlView" ref="535508469"/>
 							<bool key="NSDrawsBackground">YES</bool>
 							<object class="NSColor" key="NSBackgroundColor">
@@ -93,11 +113,12 @@
 							</object>
 						</object>
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+						<int key="NSTextFieldAlignmentRectInsetsVersion">1</int>
 					</object>
 					<object class="NSButton" id="368496192">
 						<reference key="NSNextResponder" ref="928520650"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{87, 4}, {29, 29}}</string>
+						<string key="NSFrame">{{181, 3}, {29, 29}}</string>
 						<reference key="NSSuperview" ref="928520650"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="535508469"/>
@@ -107,11 +128,7 @@
 							<int key="NSCellFlags">67108864</int>
 							<int key="NSCellFlags2">134250496</int>
 							<string key="NSContents"/>
-							<object class="NSFont" key="NSSupport" id="64724822">
-								<string key="NSName">LucidaGrande</string>
-								<double key="NSSize">13</double>
-								<int key="NSfFlags">1044</int>
-							</object>
+							<reference key="NSSupport" ref="64724822"/>
 							<reference key="NSControlView" ref="368496192"/>
 							<int key="NSButtonFlags">-2039201792</int>
 							<int key="NSButtonFlags2">6</int>
@@ -128,7 +145,7 @@
 						<string key="NSFrame">{{59, 4}, {29, 29}}</string>
 						<reference key="NSSuperview" ref="928520650"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="368496192"/>
+						<reference key="NSNextKeyView" ref="717320284"/>
 						<int key="NSTag">33002</int>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="386107000">
@@ -200,7 +217,7 @@
 						<string key="NSFrame">{{572, 4}, {29, 29}}</string>
 						<reference key="NSSuperview" ref="928520650"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="421615633"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="204555298">
 							<int key="NSCellFlags">67108864</int>
@@ -217,7 +234,7 @@
 						</object>
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 					</object>
-				</object>
+				</array>
 				<string key="NSFrameSize">{604, 35}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
@@ -230,10 +247,9 @@
 			<object class="NSUserDefaultsController" id="306232897">
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
-		</object>
+		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
-			<object class="NSMutableArray" key="connectionRecords">
-				<bool key="EncodedWithXMLCoder">YES</bool>
+			<array key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">backButton_</string>
@@ -299,6 +315,14 @@
 					<int key="connectionID">154</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">devtool_</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="717320284"/>
+					</object>
+					<int key="connectionID">229</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">commandDispatch:</string>
 						<reference key="source" ref="1003"/>
@@ -334,9 +358,17 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">commandDispatchUsingKeyModifiers:</string>
 						<reference key="source" ref="1003"/>
+						<reference key="destination" ref="717320284"/>
+					</object>
+					<int key="connectionID">231</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">commandDispatchUsingKeyModifiers:</string>
+						<reference key="source" ref="1003"/>
 						<reference key="destination" ref="368496192"/>
 					</object>
-					<int key="connectionID">155</int>
+					<int key="connectionID">232</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -346,15 +378,12 @@
 					</object>
 					<int key="connectionID">123</int>
 				</object>
-			</object>
+			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
-				<object class="NSArray" key="orderedObjects">
-					<bool key="EncodedWithXMLCoder">YES</bool>
+				<array key="orderedObjects">
 					<object class="IBObjectRecord">
 						<int key="objectID">0</int>
-						<object class="NSArray" key="object" id="0">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-						</object>
+						<array key="object" id="0"/>
 						<reference key="children" ref="1000"/>
 						<nil key="parent"/>
 					</object>
@@ -379,61 +408,56 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">1</int>
 						<reference key="object" ref="928520650"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
+						<array class="NSMutableArray" key="children">
 							<reference ref="634265909"/>
 							<reference ref="535508469"/>
 							<reference ref="781044416"/>
-							<reference ref="368496192"/>
 							<reference ref="421615633"/>
 							<reference ref="602421009"/>
 							<reference ref="458854861"/>
-						</object>
+							<reference ref="368496192"/>
+							<reference ref="717320284"/>
+						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">2</int>
 						<reference key="object" ref="634265909"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
+						<array class="NSMutableArray" key="children">
 							<reference ref="697431051"/>
-						</object>
+						</array>
 						<reference key="parent" ref="928520650"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">3</int>
 						<reference key="object" ref="458854861"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
+						<array class="NSMutableArray" key="children">
 							<reference ref="386107000"/>
-						</object>
+						</array>
 						<reference key="parent" ref="928520650"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
 						<reference key="object" ref="535508469"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
+						<array class="NSMutableArray" key="children">
 							<reference ref="464583340"/>
-						</object>
+						</array>
 						<reference key="parent" ref="928520650"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">7</int>
 						<reference key="object" ref="781044416"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
+						<array class="NSMutableArray" key="children">
 							<reference ref="3781855"/>
-						</object>
+						</array>
 						<reference key="parent" ref="928520650"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
 						<reference key="object" ref="368496192"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
+						<array class="NSMutableArray" key="children">
 							<reference ref="760046712"/>
-						</object>
+						</array>
 						<reference key="parent" ref="928520650"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -464,10 +488,9 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">38</int>
 						<reference key="object" ref="602421009"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
+						<array class="NSMutableArray" key="children">
 							<reference ref="204555298"/>
-						</object>
+						</array>
 						<reference key="parent" ref="928520650"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -491,147 +514,122 @@
 						<reference key="parent" ref="928520650"/>
 						<string key="objectName">Browser Actions Container</string>
 					</object>
-				</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">225</int>
+						<reference key="object" ref="717320284"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="327249598"/>
+						</array>
+						<reference key="parent" ref="928520650"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">226</int>
+						<reference key="object" ref="327249598"/>
+						<reference key="parent" ref="717320284"/>
+					</object>
+				</array>
 			</object>
-			<object class="NSMutableDictionary" key="flattenedProperties">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-				<object class="NSArray" key="dict.sortedKeys">
-					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>-1.IBPluginDependency</string>
-					<string>-2.IBPluginDependency</string>
-					<string>-3.IBPluginDependency</string>
-					<string>1.IBPluginDependency</string>
-					<string>10.CustomClassName</string>
-					<string>10.IBPluginDependency</string>
-					<string>122.IBPluginDependency</string>
-					<string>13.CustomClassName</string>
-					<string>13.IBPluginDependency</string>
-					<string>130.IBPluginDependency</string>
-					<string>14.CustomClassName</string>
-					<string>14.IBPluginDependency</string>
-					<string>144.IBPluginDependency</string>
-					<string>15.CustomClassName</string>
-					<string>15.IBPluginDependency</string>
-					<string>2.CustomClassName</string>
-					<string>2.IBAttributePlaceholdersKey</string>
-					<string>2.IBPluginDependency</string>
-					<string>3.CustomClassName</string>
-					<string>3.IBAttributePlaceholdersKey</string>
-					<string>3.IBPluginDependency</string>
-					<string>38.CustomClassName</string>
-					<string>38.IBAttributePlaceholdersKey</string>
-					<string>38.IBPluginDependency</string>
-					<string>39.CustomClassName</string>
-					<string>39.IBPluginDependency</string>
-					<string>4.CustomClassName</string>
-					<string>4.IBPluginDependency</string>
-					<string>7.CustomClassName</string>
-					<string>7.IBAttributePlaceholdersKey</string>
-					<string>7.IBPluginDependency</string>
-					<string>8.CustomClassName</string>
-					<string>8.IBAttributePlaceholdersKey</string>
-					<string>8.IBPluginDependency</string>
-					<string>9.CustomClassName</string>
-					<string>9.IBPluginDependency</string>
+			<dictionary class="NSMutableDictionary" key="flattenedProperties">
+				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<reference key="1.IBNSViewMetadataGestureRecognizers" ref="0"/>
+				<string key="1.IBPersistedLastKnownCanvasPosition">{191, 415.5}</string>
+				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="10.CustomClassName">ClickHoldButtonCell</string>
+				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="122.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="13.CustomClassName">AutocompleteTextFieldCell</string>
+				<string key="13.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="130.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="14.CustomClassName">ClickHoldButtonCell</string>
+				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="144.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="15.CustomClassName">ClickHoldButtonCell</string>
+				<string key="15.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="2.CustomClassName">MenuButton</string>
+				<object class="NSMutableDictionary" key="2.IBAttributePlaceholdersKey">
+					<string key="NS.key.0">ToolTip</string>
+					<object class="IBToolTipAttribute" key="NS.object.0">
+						<string key="name">ToolTip</string>
+						<reference key="object" ref="634265909"/>
+						<string key="toolTip">^IDS_TOOLTIP_BACK</string>
+					</object>
 				</object>
-				<object class="NSArray" key="dict.values">
-					<bool key="EncodedWithXMLCoder">YES</bool>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>ClickHoldButtonCell</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>AutocompleteTextFieldCell</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>ClickHoldButtonCell</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>ClickHoldButtonCell</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>MenuButton</string>
-					<object class="NSMutableDictionary">
-						<string key="NS.key.0">ToolTip</string>
-						<object class="IBToolTipAttribute" key="NS.object.0">
-							<string key="name">ToolTip</string>
-							<reference key="object" ref="634265909"/>
-							<string key="toolTip">^IDS_TOOLTIP_BACK</string>
-						</object>
+				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="225.CustomClassName">DevtoolButton</string>
+				<object class="NSMutableDictionary" key="225.IBAttributePlaceholdersKey">
+					<string key="NS.key.0">ToolTip</string>
+					<object class="IBToolTipAttribute" key="NS.object.0">
+						<string key="name">ToolTip</string>
+						<reference key="object" ref="717320284"/>
+						<string key="toolTip">^IDS_TOOLTIP_RELOAD</string>
 					</object>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>ReloadButton</string>
-					<object class="NSMutableDictionary">
-						<string key="NS.key.0">ToolTip</string>
-						<object class="IBToolTipAttribute" key="NS.object.0">
-							<string key="name">ToolTip</string>
-							<reference key="object" ref="458854861"/>
-							<string key="toolTip">^IDS_TOOLTIP_RELOAD</string>
-						</object>
-					</object>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>MenuButton</string>
-					<object class="NSMutableDictionary">
-						<string key="NS.key.0">ToolTip</string>
-						<object class="IBToolTipAttribute" key="NS.object.0">
-							<string key="name">ToolTip</string>
-							<reference key="object" ref="602421009"/>
-							<string key="toolTip">^IDS_APPMENU_TOOLTIP</string>
-						</object>
-					</object>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>WrenchToolbarButtonCell</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>AutocompleteTextField</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>MenuButton</string>
-					<object class="NSMutableDictionary">
-						<string key="NS.key.0">ToolTip</string>
-						<object class="IBToolTipAttribute" key="NS.object.0">
-							<string key="name">ToolTip</string>
-							<reference key="object" ref="781044416"/>
-							<string key="toolTip">^IDS_TOOLTIP_FORWARD</string>
-						</object>
-					</object>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>ToolbarButton</string>
-					<object class="NSMutableDictionary">
-						<string key="NS.key.0">ToolTip</string>
-						<object class="IBToolTipAttribute" key="NS.object.0">
-							<string key="name">ToolTip</string>
-							<reference key="object" ref="368496192"/>
-							<string key="toolTip">^IDS_TOOLTIP_HOME</string>
-						</object>
-					</object>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>ClickHoldButtonCell</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
-			</object>
-			<object class="NSMutableDictionary" key="unlocalizedProperties">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-				<reference key="dict.sortedKeys" ref="0"/>
-				<reference key="dict.values" ref="0"/>
-			</object>
+				<string key="225.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="226.CustomClassName">ClickHoldButtonCell</string>
+				<string key="226.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="3.CustomClassName">ReloadButton</string>
+				<object class="NSMutableDictionary" key="3.IBAttributePlaceholdersKey">
+					<string key="NS.key.0">ToolTip</string>
+					<object class="IBToolTipAttribute" key="NS.object.0">
+						<string key="name">ToolTip</string>
+						<reference key="object" ref="458854861"/>
+						<string key="toolTip">^IDS_TOOLTIP_RELOAD</string>
+					</object>
+				</object>
+				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="38.CustomClassName">MenuButton</string>
+				<object class="NSMutableDictionary" key="38.IBAttributePlaceholdersKey">
+					<string key="NS.key.0">ToolTip</string>
+					<object class="IBToolTipAttribute" key="NS.object.0">
+						<string key="name">ToolTip</string>
+						<reference key="object" ref="602421009"/>
+						<string key="toolTip">^IDS_APPMENU_TOOLTIP</string>
+					</object>
+				</object>
+				<string key="38.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="39.CustomClassName">WrenchToolbarButtonCell</string>
+				<string key="39.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="4.CustomClassName">AutocompleteTextField</string>
+				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="7.CustomClassName">MenuButton</string>
+				<object class="NSMutableDictionary" key="7.IBAttributePlaceholdersKey">
+					<string key="NS.key.0">ToolTip</string>
+					<object class="IBToolTipAttribute" key="NS.object.0">
+						<string key="name">ToolTip</string>
+						<reference key="object" ref="781044416"/>
+						<string key="toolTip">^IDS_TOOLTIP_FORWARD</string>
+					</object>
+				</object>
+				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="8.CustomClassName">ToolbarButton</string>
+				<object class="NSMutableDictionary" key="8.IBAttributePlaceholdersKey">
+					<string key="NS.key.0">ToolTip</string>
+					<object class="IBToolTipAttribute" key="NS.object.0">
+						<string key="name">ToolTip</string>
+						<reference key="object" ref="368496192"/>
+						<string key="toolTip">^IDS_TOOLTIP_HOME</string>
+					</object>
+				</object>
+				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="9.CustomClassName">ClickHoldButtonCell</string>
+				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+			</dictionary>
+			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
-			<object class="NSMutableDictionary" key="localizations">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-				<reference key="dict.sortedKeys" ref="0"/>
-				<reference key="dict.values" ref="0"/>
-			</object>
+			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">224</int>
+			<int key="maxID">232</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<bool key="EncodedWithXMLCoder">YES</bool>
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">AutocompleteTextField</string>
 					<string key="superclassName">StyledTextField</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/AutocompleteTextField.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/location_bar/autocomplete_text_field.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -639,7 +637,7 @@
 					<string key="superclassName">StyledTextFieldCell</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/AutocompleteTextFieldCell.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/location_bar/autocomplete_text_field_cell.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -647,7 +645,7 @@
 					<string key="superclassName">NSView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BackgroundGradientView.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/background_gradient_view.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -655,7 +653,7 @@
 					<string key="superclassName">NSView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BrowserActionsContainerView.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/extensions/browser_actions_container_view.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -663,7 +661,7 @@
 					<string key="superclassName">GTMUILocalizer</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ChromeUILocalizer.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/ui_localizer.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -671,43 +669,33 @@
 					<string key="superclassName">ImageButtonCell</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ClickHoldButtonCell.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/clickhold_button_cell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">DevtoolButton</string>
+					<string key="superclassName">MenuButton</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/toolbar/devtool_button_cocoa.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">FirstResponder</string>
-					<object class="NSMutableDictionary" key="actions">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>commandDispatch:</string>
-							<string>commandDispatchUsingKeyModifiers:</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="commandDispatch:">id</string>
+						<string key="commandDispatchUsingKeyModifiers:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="commandDispatch:">
+							<string key="name">commandDispatch:</string>
+							<string key="candidateClassName">id</string>
 						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
-							<string>id</string>
+						<object class="IBActionInfo" key="commandDispatchUsingKeyModifiers:">
+							<string key="name">commandDispatchUsingKeyModifiers:</string>
+							<string key="candidateClassName">id</string>
 						</object>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>commandDispatch:</string>
-							<string>commandDispatchUsingKeyModifiers:</string>
-						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBActionInfo">
-								<string key="name">commandDispatch:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">commandDispatchUsingKeyModifiers:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-						</object>
-					</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBUserSource</string>
 						<string key="minorKey"/>
@@ -716,48 +704,28 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">GTMUILocalizer</string>
 					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>otherObjectToLocalize_</string>
-							<string>owner_</string>
-							<string>yetAnotherObjectToLocalize_</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="otherObjectToLocalize_">id</string>
+						<string key="owner_">id</string>
+						<string key="yetAnotherObjectToLocalize_">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="otherObjectToLocalize_">
+							<string key="name">otherObjectToLocalize_</string>
+							<string key="candidateClassName">id</string>
 						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
-							<string>id</string>
-							<string>id</string>
+						<object class="IBToOneOutletInfo" key="owner_">
+							<string key="name">owner_</string>
+							<string key="candidateClassName">id</string>
 						</object>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>otherObjectToLocalize_</string>
-							<string>owner_</string>
-							<string>yetAnotherObjectToLocalize_</string>
+						<object class="IBToOneOutletInfo" key="yetAnotherObjectToLocalize_">
+							<string key="name">yetAnotherObjectToLocalize_</string>
+							<string key="candidateClassName">id</string>
 						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">otherObjectToLocalize_</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">owner_</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">yetAnotherObjectToLocalize_</string>
-								<string key="candidateClassName">id</string>
-							</object>
-						</object>
-					</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/GTMUILocalizer.h</string>
+						<string key="minorKey">../../third_party/google_toolbox_for_mac/src/AppKit/GTMUILocalizer.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -765,7 +733,7 @@
 					<string key="superclassName">NSButtonCell</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ImageButtonCell.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/image_button_cell.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -784,7 +752,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/MenuButton.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/menu_button.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -792,7 +760,7 @@
 					<string key="superclassName">MenuButton</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ReloadButton.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/toolbar/reload_button_cocoa.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -800,7 +768,7 @@
 					<string key="superclassName">NSTextField</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/StyledTextField.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/styled_text_field.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -808,7 +776,7 @@
 					<string key="superclassName">NSTextFieldCell</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/StyledTextFieldCell.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/styled_text_field_cell.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -816,82 +784,59 @@
 					<string key="superclassName">NSButton</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ToolbarButton.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/toolbar/toolbar_button_cocoa.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">ToolbarController</string>
 					<string key="superclassName">NSViewController</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>backButton_</string>
-							<string>browserActionsContainerView_</string>
-							<string>forwardButton_</string>
-							<string>homeButton_</string>
-							<string>locationBar_</string>
-							<string>reloadButton_</string>
-							<string>wrenchButton_</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="backButton_">MenuButton</string>
+						<string key="browserActionsContainerView_">BrowserActionsContainerView</string>
+						<string key="devtool_">DevtoolButton</string>
+						<string key="forwardButton_">MenuButton</string>
+						<string key="homeButton_">ToolbarButton</string>
+						<string key="locationBar_">AutocompleteTextField</string>
+						<string key="reloadButton_">ReloadButton</string>
+						<string key="wrenchButton_">MenuButton</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="backButton_">
+							<string key="name">backButton_</string>
+							<string key="candidateClassName">MenuButton</string>
 						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>MenuButton</string>
-							<string>BrowserActionsContainerView</string>
-							<string>MenuButton</string>
-							<string>ToolbarButton</string>
-							<string>AutocompleteTextField</string>
-							<string>ReloadButton</string>
-							<string>MenuButton</string>
+						<object class="IBToOneOutletInfo" key="browserActionsContainerView_">
+							<string key="name">browserActionsContainerView_</string>
+							<string key="candidateClassName">BrowserActionsContainerView</string>
 						</object>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>backButton_</string>
-							<string>browserActionsContainerView_</string>
-							<string>forwardButton_</string>
-							<string>homeButton_</string>
-							<string>locationBar_</string>
-							<string>reloadButton_</string>
-							<string>wrenchButton_</string>
+						<object class="IBToOneOutletInfo" key="devtool_">
+							<string key="name">devtool_</string>
+							<string key="candidateClassName">DevtoolButton</string>
 						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">backButton_</string>
-								<string key="candidateClassName">MenuButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">browserActionsContainerView_</string>
-								<string key="candidateClassName">BrowserActionsContainerView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">forwardButton_</string>
-								<string key="candidateClassName">MenuButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">homeButton_</string>
-								<string key="candidateClassName">ToolbarButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">locationBar_</string>
-								<string key="candidateClassName">AutocompleteTextField</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">reloadButton_</string>
-								<string key="candidateClassName">ReloadButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">wrenchButton_</string>
-								<string key="candidateClassName">MenuButton</string>
-							</object>
+						<object class="IBToOneOutletInfo" key="forwardButton_">
+							<string key="name">forwardButton_</string>
+							<string key="candidateClassName">MenuButton</string>
 						</object>
-					</object>
+						<object class="IBToOneOutletInfo" key="homeButton_">
+							<string key="name">homeButton_</string>
+							<string key="candidateClassName">ToolbarButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="locationBar_">
+							<string key="name">locationBar_</string>
+							<string key="candidateClassName">AutocompleteTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="reloadButton_">
+							<string key="name">reloadButton_</string>
+							<string key="candidateClassName">ReloadButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="wrenchButton_">
+							<string key="name">wrenchButton_</string>
+							<string key="candidateClassName">MenuButton</string>
+						</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ToolbarController.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/toolbar/toolbar_controller.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -899,7 +844,7 @@
 					<string key="superclassName">BackgroundGradientView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ToolbarView.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/toolbar/toolbar_view_cocoa.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -907,20 +852,21 @@
 					<string key="superclassName">ClickHoldButtonCell</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/WrenchToolbarButtonCell.h</string>
+						<string key="minorKey">../../chrome/browser/ui/cocoa/toolbar/wrench_toolbar_button_cell.h</string>
 					</object>
 				</object>
-			</object>
+			</array>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
+		<bool key="IBDocument.previouslyAttemptedUpgradeToXcode5">NO</bool>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<integer value="1050" key="NS.object.0"/>
 		</object>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.InterfaceBuilder3</string>
-			<integer value="3000" key="NS.object.0"/>
+			<integer value="4600" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>

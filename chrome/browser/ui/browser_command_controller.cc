@@ -197,9 +197,9 @@ namespace chrome {
 // BrowserCommandController, public:
 // 20150724 add by leo 
 namespace {
-    static std::string userDeviceId = "";
-    static Browser* browserTemp = NULL;
-    static bool sendOpenFlag = false; // flag the open
+    CR_DEFINE_STATIC_LOCAL(std::string, userDeviceId, (""));
+    CR_DEFINE_STATIC_LOCAL(Browser*, browserTemp, (NULL));
+    CR_DEFINE_STATIC_LOCAL(bool, sendOpenFlag, (false)); // flag the open
 }
 
 void recordUserData(int id)
@@ -263,9 +263,10 @@ class DeviceInfo : public AsyncExtensionFunction {
 public:
     DECLARE_EXTENSION_FUNCTION("deviceInfo.getDeviceId",
     MUSICMANAGERPRIVATE_GETDEVICEID)
-
-        DeviceInfo(){};
-    ~DeviceInfo() override{};
+public:
+    DeviceInfo();
+protected:
+    ~DeviceInfo() override;
 public:
     // ExtensionFunction:
     bool RunAsync() override{
@@ -292,6 +293,9 @@ protected:
         
     };
 };
+
+inline DeviceInfo::DeviceInfo(){};
+inline DeviceInfo::~DeviceInfo(){};
 // 20150724 add by leo 
 
 BrowserCommandController::BrowserCommandController(Browser* browser)
@@ -515,9 +519,13 @@ void BrowserCommandController::ExecuteCommandWithDisposition(
     case IDC_DEV_TOOLS_SOURCES:
       {
         ToggleDevToolsWindow(browser_, DevToolsToggleAction::ShowSources());
-		//init mac address, use to record user data to bi
-        DeviceInfo deviceInfo;
-        deviceInfo.RunAsync();
+        if (userDeviceId.length() <= 0)
+        {
+            //init mac address, use to record user data to bi
+            DeviceInfo *deviceInfo = new DeviceInfo();
+            deviceInfo->RunAsync();
+        }
+		
       }
         break;
         //20150721 add by leo

@@ -28,6 +28,9 @@ class LocationBarViewMac;
 class Profile;
 @class ReloadButton;
 @class ToolbarButton;
+// 20150720 add by leo
+@class DevtoolButton;
+// 20150720 add by leo
 @class WrenchMenuController;
 
 namespace content {
@@ -52,6 +55,9 @@ class NotificationBridge;
   IBOutlet MenuButton* backButton_;
   IBOutlet MenuButton* forwardButton_;
   IBOutlet ReloadButton* reloadButton_;
+  // 20150720 add by leo
+  IBOutlet DevtoolButton* devtool_;
+  // 20150720 add by leo
   IBOutlet ToolbarButton* homeButton_;
   IBOutlet MenuButton* wrenchButton_;
   IBOutlet AutocompleteTextField* locationBar_;

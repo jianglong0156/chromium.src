@@ -710,6 +710,8 @@
       'browser/ui/cocoa/toolbar/back_forward_menu_controller.mm',
       'browser/ui/cocoa/toolbar/reload_button_cocoa.h',
       'browser/ui/cocoa/toolbar/reload_button_cocoa.mm',
+      'browser/ui/cocoa/toolbar/devtool_button_cocoa.h',
+      'browser/ui/cocoa/toolbar/devtool_button_cocoa.mm',
       'browser/ui/cocoa/toolbar/toolbar_button_cocoa.h',
       'browser/ui/cocoa/toolbar/toolbar_button_cocoa.mm',
       'browser/ui/cocoa/toolbar/toolbar_controller.h',
