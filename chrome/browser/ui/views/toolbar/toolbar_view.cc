@@ -217,7 +217,7 @@ void ToolbarView::Init() {
       ui::EF_LEFT_MOUSE_BUTTON | ui::EF_MIDDLE_MOUSE_BUTTON);
   devtool_->set_tag(IDC_SHOW_DEVTOOL);
   devtool_->SetAccessibleName(l10n_util::GetStringUTF16(IDS_ACCNAME_RELOAD));
-  devtool_->set_id(VIEW_ID_RELOAD_BUTTON);
+  devtool_->set_id(VIEW_ID_DEVTOOL_BUTTON);
   devtool_->Init();
 //20150716 add by leo
 

@@ -75,7 +75,7 @@ cr.define('help', function() {
       var dialog = document.querySelector('dialog');
       $('get-help').onclick = function() {
         //chrome.send('openHelpPage');
-        dialog.showModal();
+        //dialog.showModal();
       };
 
       $('close').onclick = function() {

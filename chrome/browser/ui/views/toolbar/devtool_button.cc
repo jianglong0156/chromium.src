@@ -52,7 +52,7 @@ void DevtoolButton::OnMouseExited(const ui::MouseEvent& event) {
 
 bool DevtoolButton::GetTooltipText(const gfx::Point& p,
                                   base::string16* tooltip) const {
-  tooltip->assign(l10n_util::GetStringUTF16(IDS_TOOLTIP_RELOAD));
+  tooltip->assign(l10n_util::GetStringUTF16(IDS_TOOLTIP_DEVTOOL));
   return true;
 }
 

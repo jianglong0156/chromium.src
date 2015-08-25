@@ -80,7 +80,7 @@
   // unset it we have to explicilty change the image ID to 0.
   [cell setImageID:0
     forButtonState:image_button_cell::kDisabledState];
-  [self setToolTip:l10n_util::GetNSStringWithFixup(IDS_TOOLTIP_RELOAD)];
+  [self setToolTip:l10n_util::GetNSStringWithFixup(IDS_TOOLTIP_DEVTOOL)];
 }
 
 - (id)accessibilityAttributeValue:(NSString *)attribute {

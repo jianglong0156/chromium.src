@@ -7425,6 +7425,9 @@ Keep your key file in a safe place. You will need it to create new versions of y
       <message name="IDS_TOOLTIP_RELOAD" desc="The tooltip for reload button">
         Reload this page
       </message>
+      <message name="IDS_TOOLTIP_DEVTOOL" desc="The tooltip for dev tool">
+        Show Cocos DevTool
+      </message>
       <message name="IDS_TOOLTIP_RELOAD_WITH_MENU" desc="The tooltip for reload button with menu in DevTools mode">
         Reload this page, hold to see more options
       </message>
